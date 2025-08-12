@@ -1,0 +1,24 @@
+```json
+{
+  "name": "react-educational-backend",
+  "version": "1.0.0",
+  "description": "Backend services",
+  "main": "app.js",
+  "private": true,
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "prettier": "^2.8.0"
+  },
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "author": "",
+  "license": "ISC"
+}
+```
