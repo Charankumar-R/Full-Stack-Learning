@@ -1,0 +1,21 @@
+{
+  "name": "js-learning-project",
+  "version": "1.0.0",
+  "description": "A comprehensive JavaScript learning project covering basic to advanced concepts.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "JavaScript",
+    "learning",
+    "tutorial",
+    "basics",
+    "advanced"
+  ],
+  "author": "Charan",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
