@@ -1,37 +1,33 @@
-/* filepath: /home/charan/Full Stack Learnings/Html CSS/02-basic-css/styles.css */
+/* Basic CSS for styling HTML elements */
 
 body {
+    /* Sets font and background for the whole page */
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    margin: 0;
+    margin: 20px;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
 }
 
 h1, h2, h3 {
+    /* Headings color */
     color: #333;
 }
 
 p {
+    /* Paragraph text color */
     color: #555;
 }
 
-a {
-    color: #007BFF;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
 .container {
+    /* Centers content and sets width */
     width: 80%;
     margin: auto;
     overflow: hidden;
 }
 
 .header {
+    /* Styles the header section */
     background: #35424a;
     color: #ffffff;
     padding: 20px 0;
@@ -39,6 +35,7 @@ a:hover {
 }
 
 .footer {
+    /* Styles the footer section */
     background: #35424a;
     color: #ffffff;
     text-align: center;
@@ -48,23 +45,29 @@ a:hover {
     width: 100%;
 }
 
-.button {
-    display: inline-block;
-    font-size: 16px;
-    color: #fff;
-    background: #007BFF;
-    padding: 10px 20px;
-    border: none;
+.styled-text {
+    /* Custom style for highlighted text */
+    font-size: 1.2em;
+    color: #007BFF;
+    font-weight: bold;
+    background: #e0f7fa;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.background-example {
+    /* Example of background color styling */
+    background-color: #ffe082;
+    padding: 15px;
     border-radius: 5px;
-    text-decoration: none;
+    margin-bottom: 10px;
 }
 
-.button:hover {
-    background: #0056b3;
-}
-
-.border {
-    border: 2px solid #007BFF;
-    padding: 10px;
-    margin: 20px 0;
+.border-example {
+    /* Example of border styling */
+    border: 2px dashed #007BFF;
+    padding: 15px;
+    border-radius: 5px;
+    background: #fff;
+    margin-bottom: 10px;
 }

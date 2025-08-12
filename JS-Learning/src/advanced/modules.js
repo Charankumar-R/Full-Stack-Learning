@@ -1,26 +1,33 @@
-// filepath: /js-learning-project/js-learning-project/src/advanced/modules.js
-// This file explains module creation and usage, including import and export statements.
+// MODULES IN JAVASCRIPT
+// - ES6 import/export
+// - CommonJS require/module.exports
+// - Dynamic imports
+// - Module bundlers (Webpack, Rollup)
+// - Tree shaking
 
-// Exporting a function
-export function greet(name) {
-    return `Hello, ${name}!`;
+// This module handles user authentication
+export function login(username, password) {
+    // ...login code...
 }
 
-// Exporting a constant
-export const PI = 3.14;
-
-// Exporting a class
-export class Circle {
-    constructor(radius) {
-        this.radius = radius;
-    }
-
-    area() {
-        return PI * this.radius * this.radius;
-    }
+export function logout() {
+    // ...logout code...
 }
 
-// Default export
-export default function farewell(name) {
-    return `Goodbye, ${name}!`;
+// This module manages user profiles
+export function createProfile(userData) {
+    // ...profile creation code...
+}
+
+export function updateProfile(userId, newUserData) {
+    // ...profile update code...
+}
+
+// This module handles data storage and retrieval
+export function saveData(key, value) {
+    // ...data saving code...
+}
+
+export function getData(key) {
+    // ...data retrieval code...
 }

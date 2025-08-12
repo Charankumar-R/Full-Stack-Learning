@@ -1,20 +1,4 @@
-// filepath: /js-learning-project/js-learning-project/src/index.js
-import './basics/variables.js';
-import './basics/dataTypes.js';
-import './basics/operators.js';
-import './basics/controlFlow.js';
-import './basics/arrays.js';
-import './basics/objects.js';
-import './basics/functions.js';
-import './advanced/promises.js';
-import './advanced/asyncAwait.js';
-import './advanced/closures.js';
-import './advanced/thisKeyword.js';
-import './advanced/prototypes.js';
-import './advanced/classes.js';
-import './advanced/modules.js';
-import './advanced/errorHandling.js';
-import './dom/domBasics.js';
-import './dom/events.js';
-import './dom/manipulation.js';
-import './examples/js_tutorial.js';
+// ENTRY POINT FOR JS LEARNING PROJECT
+// - Import and run examples from each topic
+// - Demonstrate integration of concepts
+// - Tips for project structure and modularity

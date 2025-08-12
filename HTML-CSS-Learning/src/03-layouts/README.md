@@ -1,3 +1,11 @@
+# Layouts
+
+This folder contains examples of CSS layouts using Flexbox and Grid.
+
+- `flexbox.html`: Flexbox layout example.
+- `grid.html`: Grid layout example.
+- `styles.css`: CSS for layouts.
+
 # Overview of Layout Techniques in CSS
 
 This document provides an overview of the layout techniques available in CSS, focusing on two powerful layout models: **Flexbox** and **CSS Grid**. Understanding these models is essential for creating responsive and well-structured web layouts.

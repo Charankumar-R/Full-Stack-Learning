@@ -1,3 +1,10 @@
+# Forms
+
+This folder contains examples of HTML forms and basic form styling.
+
+- `forms.html`: HTML form example.
+- `styles.css`: CSS for forms.
+
 # HTML Forms
 
 This section covers the essential concepts of HTML forms, which are crucial for collecting user input on web pages. Forms are used in various applications, from simple contact forms to complex data entry systems.

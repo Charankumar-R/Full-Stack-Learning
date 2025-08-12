@@ -1,47 +1,51 @@
-class Animal {
-    constructor(name, species) {
+// ES6 Classes in JavaScript: constructors, inheritance, static methods
+
+// Example of a basic class with a constructor
+class Person {
+    constructor(name, age) {
         this.name = name;
-        this.species = species;
+        this.age = age;
     }
 
-    makeSound() {
-        console.log(`${this.name} makes a sound.`);
-    }
-}
-
-class Dog extends Animal {
-    constructor(name, breed) {
-        super(name, 'Dog');
-        this.breed = breed;
+    // Instance method
+    greet() {
+        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
     }
 
-    makeSound() {
-        console.log(`${this.name} barks.`);
+    // Static method
+    static species() {
+        return 'Homo sapiens';
     }
 }
 
-class Cat extends Animal {
-    constructor(name, color) {
-        super(name, 'Cat');
-        this.color = color;
+// Example of inheritance
+class Employee extends Person {
+    constructor(name, age, jobTitle) {
+        super(name, age); // Call the parent class constructor
+        this.jobTitle = jobTitle;
     }
 
-    makeSound() {
-        console.log(`${this.name} meows.`);
-    }
-}
-
-const dog = new Dog('Buddy', 'Golden Retriever');
-const cat = new Cat('Whiskers', 'Tabby');
-
-dog.makeSound(); // Buddy barks.
-cat.makeSound(); // Whiskers meows. 
-
-// Static method example
-class MathUtil {
-    static add(a, b) {
-        return a + b;
+    // Overriding the greet method
+    greet() {
+        super.greet(); // Call the parent class greet method
+        console.log(`I work as a ${this.jobTitle}.`);
     }
 }
 
-console.log(MathUtil.add(5, 3)); // 8
+// Usage
+const john = new Person('John', 30);
+john.greet(); // Hello, my name is John and I am 30 years old.
+
+const jane = new Employee('Jane', 28, 'Software Developer');
+jane.greet(); // Hello, my name is Jane and I am 28 years old. I work as a Software Developer.
+
+console.log(Person.species()); // Homo sapiens
+console.log(Employee.species()); // Homo sapiens
+
+// CLASSES IN JAVASCRIPT
+// - ES6 class syntax
+// - Constructors
+// - Inheritance (extends, super)
+// - Static methods
+// - Private fields (#)
+// - Getters and setters

@@ -1,54 +1,64 @@
-// filepath: /js-learning-project/js-learning-project/src/basics/objects.js
-// Object Creation and Manipulation in JavaScript
-
-// Object Literal
-const person = {
-    name: "Charan",
-    age: 20,
-    greet: function() {
-        return `Hello, my name is ${this.name}`;
-    }
+// OBJECTS IN JAVASCRIPT
+// ---------------------
+// Object literals
+let person = {
+    name: "Bob",
+    age: 30,
+    greet: function() { console.log("Hello!"); }
 };
+console.log(person.name, person.age);
+person.greet();
 
-// Accessing Object Properties
-console.log(person.name); // "Charan"
-console.log(person['age']); // 20
-
-// Adding a New Property
+// Adding/removing properties
 person.job = "Developer";
-console.log(person.job); // "Developer"
+delete person.age;
+console.log(person);
 
-// Updating a Property
-person.age = 21;
-console.log(person.age); // 21
+// Computed properties
+let key = "score";
+person[key] = 100;
+console.log(person);
 
-// Deleting a Property
-delete person.job;
-console.log(person.job); // undefined
+// Methods
+person.sayHi = function() { console.log("Hi!"); };
+person.sayHi();
 
-// Constructor Function
-function Car(make, model, year) {
+// Constructor functions
+function Car(make, model) {
     this.make = make;
     this.model = model;
-    this.year = year;
 }
+let car1 = new Car("Toyota", "Corolla");
+console.log(car1);
 
-// Creating an Object using Constructor Function
-const myCar = new Car("Toyota", "Corolla", 2021);
-console.log(myCar); // Car { make: 'Toyota', model: 'Corolla', year: 2021 }
+// Object.create
+let proto = { greet() { console.log("Proto greet"); } };
+let obj2 = Object.create(proto);
+obj2.greet();
 
-// Prototypes
-Car.prototype.getCarInfo = function() {
-    return `${this.year} ${this.make} ${this.model}`;
-};
+// ES6 Classes
+class Animal {
+    constructor(name) { this.name = name; }
+    speak() { console.log(this.name + " makes a sound"); }
+}
+let dog = new Animal("Dog");
+dog.speak();
 
-console.log(myCar.getCarInfo()); // "2021 Toyota Corolla"
+// Encapsulation, privacy
+class Counter {
+    #count = 0;
+    increment() { this.#count++; }
+    get value() { return this.#count; }
+}
+let counter = new Counter();
+counter.increment();
+console.log(counter.value);
 
-// Object Destructuring
-const { name, age } = person;
-console.log(name, age); // "Charan", 21
+// Object.assign, keys, values, entries
+let o1 = {a:1}, o2 = {b:2};
+let merged = Object.assign({}, o1, o2);
+console.log(Object.keys(merged), Object.values(merged), Object.entries(merged));
 
-// Spread Operator
-const additionalInfo = { hobby: "Coding", city: "New York" };
-const completeProfile = { ...person, ...additionalInfo };
-console.log(completeProfile); // { name: 'Charan', age: 21, hobby: 'Coding', city: 'New York' }
+// Deep vs shallow copy
+let shallow = Object.assign({}, person);
+let deep = JSON.parse(JSON.stringify(person));

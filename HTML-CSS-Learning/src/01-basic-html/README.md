@@ -1,6 +1,8 @@
-# Basic HTML Overview
+# Basic HTML
 
-This section covers the fundamental concepts of HTML (HyperText Markup Language), which is the standard markup language for creating web pages.
+This folder contains examples of basic HTML structure and elements.
+
+- `index.html`: A simple HTML file demonstrating headings and paragraphs.
 
 ## Purpose of HTML
 

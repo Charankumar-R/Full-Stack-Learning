@@ -1,22 +1,44 @@
-// filepath: /js-learning-project/js-learning-project/src/dom/domBasics.js
-// This file introduces the Document Object Model (DOM) and how to access and manipulate DOM elements.
+// DOM Basics: accessing and manipulating DOM elements
+// Example: document.getElementById, querySelector
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Accessing elements
-    const heading = document.querySelector("h1");
-    console.log("Heading:", heading.textContent);
+// This file contains basic examples and explanations on how to access and manipulate
+// DOM elements using vanilla JavaScript. It covers methods like `getElementById`,
+// `querySelector`, and others to demonstrate the fundamentals of DOM manipulation.
 
-    // Creating a new element
-    const newElement = document.createElement("p");
-    newElement.textContent = "This is a new paragraph added to the DOM.";
-    document.body.appendChild(newElement);
+// DOM BASICS
+// - What is the DOM?
+// - Selecting elements: getElementById, querySelector, etc.
+// - Reading and modifying properties: textContent, innerHTML, value, style
+// - Traversing the DOM: parent, children, siblings
 
-    // Updating an existing element
-    heading.textContent = "Learn JavaScript with Charan";
+// Accessing an element by its ID
+// Syntax: document.getElementById('elementId')
+// Returns the element that has the ID attribute with the
+// Returns the first element that matches the specified CSS selector
+// Example:
+var firstParagraph = document.querySelector('p');
+console.log(firstParagraph);
 
-    // Removing an element
-    const elementToRemove = document.querySelector("p");
-    if (elementToRemove) {
-        document.body.removeChild(elementToRemove);
-    }
-});
+// Accessing multiple elements
+// Syntax: document.querySelectorAll('cssSelector')
+// Returns a NodeList of all elements that match the specified CSS selector
+// Example:
+var listItems = document.querySelectorAll('ul li');
+console.log(listItems);
+
+// Manipulating element content
+// Syntax: element.innerHTML or element.textContent
+// Changes the HTML or text content of the specified element
+// Example:
+header.innerHTML = 'Welcome to DOM Manipulation';
+firstParagraph.textContent = 'This is a basic example of manipulating DOM elements.';
+
+// Manipulating element attributes
+// Syntax: element.setAttribute('attributeName', 'value')
+// Changes the value of an attribute on the specified element
+// Example:
+header.setAttribute('class', 'main-header');
+
+// Note: Always ensure that the DOM is fully loaded before running scripts that
+// manipulate DOM elements. This can be done by placing the script at the end of
+// the body section or using the `DOMContentLoaded` event.

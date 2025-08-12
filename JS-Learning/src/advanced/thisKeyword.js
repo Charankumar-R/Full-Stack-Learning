@@ -1,43 +1,51 @@
-// This file explains the context of the this keyword in different scenarios, including global, object, and function contexts.
+// 'this' keyword in JavaScript: global, object, function context
+// Example usages
 
-function globalContext() {
-    console.log(this); // In the global context, 'this' refers to the global object (window in browsers)
+// In the global context, 'this' refers to the global object
+console.log(this); // In a browser, this would log the Window object
+
+// Inside a function, 'this' refers to the object that the function is a method of
+function showThis() {
+  console.log(this);
 }
 
 const obj = {
-    name: "Charan",
-    greet: function() {
-        console.log(`Hello, my name is ${this.name}`); // 'this' refers to the object 'obj'
-    }
+  method: showThis
 };
 
-const greetFunction = obj.greet;
-greetFunction(); // In this case, 'this' will be undefined in strict mode or the global object in non-strict mode
+obj.method(); // Logs obj, because 'this' refers to obj in the method
 
-const anotherObj = {
-    name: "Alice",
-    greet: obj.greet
-};
+// However, if the function is called as a standalone function, 'this' will not refer to the object
+const standalone = obj.method;
+standalone(); // Logs the global object (or undefined in strict mode)
 
-anotherObj.greet(); // 'this' refers to 'anotherObj'
-
-// Arrow functions do not have their own 'this', they inherit 'this' from the parent scope
+// Arrow functions do not have their own 'this'. They inherit 'this' from the parent scope
 const arrowFunction = () => {
-    console.log(this); // 'this' refers to the global object (or undefined in strict mode)
+  console.log(this);
 };
 
-arrowFunction(); 
+arrowFunction(); // Logs the global object (or undefined in strict mode), because arrow functions don't have their own 'this'
 
-// Using 'bind' to set 'this' explicitly
-const boundGreet = obj.greet.bind(anotherObj);
-boundGreet(); // 'this' refers to 'anotherObj' due to bind
-
-// Using 'call' to invoke a function with a specific 'this' value
-obj.greet.call(anotherObj); // 'this' refers to 'anotherObj'
-
-// Using 'apply' to invoke a function with a specific 'this' value and arguments as an array
-function introduce(greeting) {
-    console.log(`${greeting}, my name is ${this.name}`);
+// 'this' can be explicitly set using call, apply, or bind
+function setName(name) {
+  this.name = name;
 }
 
-introduce.apply(obj, ["Hi"]); // 'this' refers to 'obj' and outputs: "Hi, my name is Charan"
+const user = {};
+
+setName.call(user, 'John');
+console.log(user.name); // John
+
+setName.apply(user, ['Doe']);
+console.log(user.name); // Doe
+
+const boundSetName = setName.bind(user);
+boundSetName('Smith');
+console.log(user.name); // Smith
+
+// 'THIS' KEYWORD IN JAVASCRIPT
+// - Global, object, function, class context
+// - Arrow functions and 'this'
+// - call, apply, bind
+// - Event handlers and 'this'
+// - Common pitfalls

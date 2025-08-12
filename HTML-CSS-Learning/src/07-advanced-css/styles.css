@@ -18,6 +18,22 @@
     animation: slideIn 0.5s ease-in-out;
 }
 
+@keyframes moveBox {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(200px);
+    }
+}
+
+.animated-box {
+    width: 100px;
+    height: 100px;
+    background: #4caf50;
+    animation: moveBox 2s infinite alternate;
+}
+
 /* Transitions */
 .transition {
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -28,10 +44,25 @@
     transform: scale(1.05);
 }
 
+.transition-btn {
+    padding: 10px 20px;
+    background: #2196f3;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.transition-btn:hover {
+    background: #1769aa;
+}
+
 /* CSS Variables */
 :root {
     --main-bg-color: #f0f0f0;
     --main-text-color: #333;
+    --main-bg: #ffeb3b;
+    --main-color: #333;
 }
 
 body {
@@ -42,6 +73,13 @@ body {
 /* Example class for variable usage */
 .variable-example {
     background-color: var(--main-bg-color);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.variable-box {
+    background: var(--main-bg);
+    color: var(--main-color);
     padding: 20px;
     border-radius: 5px;
 }

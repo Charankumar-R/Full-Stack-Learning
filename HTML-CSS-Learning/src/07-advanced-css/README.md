@@ -1,6 +1,11 @@
-# Advanced CSS Concepts
+# Advanced CSS
 
-This section covers advanced CSS techniques that enhance the visual appeal and interactivity of web pages. The following topics are included:
+This folder contains examples of advanced CSS features.
+
+- `animations.html`: CSS animations example.
+- `transitions.html`: CSS transitions example.
+- `variables.html`: CSS variables example.
+- `styles.css`: CSS for advanced features.
 
 ## 1. CSS Animations
 CSS animations allow you to animate transitions between different CSS styles. You can create complex animations using keyframes, which define the styles at various points in the animation sequence.

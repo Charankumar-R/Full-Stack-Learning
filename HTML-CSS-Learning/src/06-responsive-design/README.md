@@ -1,6 +1,9 @@
 # Responsive Design
 
-Responsive design is a crucial aspect of modern web development, ensuring that web applications look and function well on a variety of devices and screen sizes. This README provides an overview of the key concepts and techniques used in responsive design.
+This folder contains examples of responsive web design using CSS.
+
+- `responsive.html`: Responsive design example.
+- `styles.css`: CSS for responsive layouts.
 
 ## Importance of Responsive Design
 

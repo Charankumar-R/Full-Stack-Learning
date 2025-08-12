@@ -1,50 +1,62 @@
-// filepath: /js-learning-project/js-learning-project/src/basics/controlFlow.js
-// Control Flow Statements in JavaScript
-
-// If-Else Statement
-const age = 18;
-
-if (age < 18) {
-    console.log("You are a minor.");
-} else if (age >= 18 && age < 65) {
-    console.log("You are an adult.");
+// CONTROL FLOW IN JAVASCRIPT
+// -------------------------
+// if, else, else if
+let score = 85;
+if (score >= 90) {
+    console.log("A grade");
+} else if (score >= 80) {
+    console.log("B grade");
 } else {
-    console.log("You are a senior.");
+    console.log("C grade");
 }
 
-// Switch-Case Statement
-const day = 3;
-let dayName;
-
-switch (day) {
-    case 1:
-        dayName = "Monday";
+// switch-case
+let fruit = "apple";
+switch (fruit) {
+    case "apple":
+        console.log("Apple selected");
         break;
-    case 2:
-        dayName = "Tuesday";
-        break;
-    case 3:
-        dayName = "Wednesday";
-        break;
-    case 4:
-        dayName = "Thursday";
-        break;
-    case 5:
-        dayName = "Friday";
-        break;
-    case 6:
-        dayName = "Saturday";
-        break;
-    case 7:
-        dayName = "Sunday";
+    case "banana":
+        console.log("Banana selected");
         break;
     default:
-        dayName = "Invalid day";
+        console.log("Other fruit");
 }
 
-console.log(`Today is ${dayName}.`);
+// Ternary operator
+let isMember = true;
+let price = isMember ? 10 : 20;
+console.log(price);
 
-// Ternary Operator
-const isLoggedIn = true;
-const message = isLoggedIn ? "Welcome back!" : "Please log in.";
-console.log(message);
+// Loops
+for (let i = 0; i < 3; i++) {
+    console.log("for loop", i);
+}
+let j = 0;
+while (j < 3) {
+    console.log("while loop", j);
+    j++;
+}
+let k = 0;
+do {
+    console.log("do-while loop", k);
+    k++;
+} while (k < 3);
+
+// for...in (object properties)
+let obj = {a:1, b:2};
+for (let key in obj) {
+    console.log(key, obj[key]);
+}
+// for...of (iterables)
+let arr = [10, 20, 30];
+for (let value of arr) {
+    console.log(value);
+}
+
+// break, continue
+for (let i = 0; i < 5; i++) {
+    if (i === 2) continue;
+    if (i === 4) break;
+    console.log(i);
+}

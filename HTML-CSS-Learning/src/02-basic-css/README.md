@@ -44,3 +44,10 @@ Using external stylesheets is a best practice in web development. It allows you 
 ```
 
 This approach enables you to apply the same styles across multiple pages, ensuring consistency throughout your website.
+
+# Basic CSS
+
+This folder contains examples of basic CSS usage.
+
+- `index.html`: HTML file demonstrating CSS usage.
+- `styles.css`: CSS file with basic styles.
