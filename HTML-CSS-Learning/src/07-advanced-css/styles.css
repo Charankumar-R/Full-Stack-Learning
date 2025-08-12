@@ -1,0 +1,47 @@
+/* filepath: /home/charan/Full Stack Learnings/Html CSS/07-advanced-css/styles.css */
+
+/* Advanced CSS Styles */
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.animated {
+    animation: slideIn 0.5s ease-in-out;
+}
+
+/* Transitions */
+.transition {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.transition:hover {
+    background-color: #3498db;
+    transform: scale(1.05);
+}
+
+/* CSS Variables */
+:root {
+    --main-bg-color: #f0f0f0;
+    --main-text-color: #333;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+
+/* Example class for variable usage */
+.variable-example {
+    background-color: var(--main-bg-color);
+    padding: 20px;
+    border-radius: 5px;
+}

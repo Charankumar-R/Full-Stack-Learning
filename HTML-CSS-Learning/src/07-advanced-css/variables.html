@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Understanding CSS Variables</h1>
+    </header>
+    <main>
+        <section>
+            <h2>What are CSS Variables?</h2>
+            <p>CSS Variables, also known as custom properties, allow you to store values that you can reuse throughout your CSS. They are defined using the <code>--variable-name</code> syntax.</p>
+        </section>
+        <section>
+            <h2>Defining CSS Variables</h2>
+            <p>CSS variables are defined within a selector using the <code>var(--variable-name)</code> syntax. For example:</p>
+            <pre><code>:root {
+    --main-color: #3498db;
+    --padding: 16px;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Using CSS Variables</h2>
+            <p>Once defined, you can use these variables in your styles:</p>
+            <pre><code>body {
+    background-color: var(--main-color);
+    padding: var(--padding);
+}</code></pre>
+        </section>
+        <section>
+            <h2>Benefits of CSS Variables</h2>
+            <ul>
+                <li>Easy to maintain and update styles.</li>
+                <li>Dynamic changes with JavaScript.</li>
+                <li>Scoped to the element they are defined in.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>Learn more about CSS Variables and their applications in modern web design.</p>
+    </footer>
+</body>
+</html>

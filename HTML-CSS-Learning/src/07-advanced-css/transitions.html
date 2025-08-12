@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Transitions</h1>
+        <p>Learn how to create smooth transitions between different states of an element.</p>
+    </header>
+    
+    <section>
+        <h2>Example of CSS Transitions</h2>
+        <div class="box" id="transitionBox"></div>
+        <button id="toggleButton">Toggle Transition</button>
+    </section>
+
+    <script>
+        const box = document.getElementById('transitionBox');
+        const button = document.getElementById('toggleButton');
+
+        button.addEventListener('click', () => {
+            box.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
