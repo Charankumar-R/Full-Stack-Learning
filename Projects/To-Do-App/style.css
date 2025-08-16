@@ -14,16 +14,19 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     width: 350px;
 }
-.input-section {
+
+#input-section {
     display: flex;
     justify-content: space-between;
 }
-#taskinput {
+
+#taskInput {
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
 }
+
 #addBtn{
     padding: 10px 15px;
     border: none;
@@ -32,9 +35,11 @@ body {
     color: white;
     cursor: pointer;
 }
+
 #addBtn:hover {
     background: #79dd79;
 }
+
 ul{
     list-style: none;
     padding: 0;

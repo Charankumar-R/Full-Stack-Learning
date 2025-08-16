@@ -5,7 +5,8 @@ const taskList = document.getElementById("taskList");
 addBtn.addEventListener("click", addTask);
 
 taskInput.addEventListener("keypress", function (event) {
-  if (event.key == "Enter") {
+  if (event.key === "Enter") {
+    event.preventDefault(); // Prevent form submission
     addTask();
   }
 });
@@ -28,7 +29,8 @@ function addTask() {
   const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "❌";
   deleteBtn.style.marginLeft = "10px";
-  deleteBtn.addEventListener("click", () => {
+  deleteBtn.addEventListener("click", (e) => {
+    e.stopPropagation(); // Prevent toggling completed when deleting
     li.remove();
   });
 
