@@ -9,6 +9,8 @@ const User = require("../models/userModel");
 const { doHash, doHashValidation, hmacProcess } = require("../utils/hashing");
 const jwt = require("jsonwebtoken");
 const transport = require("../middlewares/sendMail");
+const { identifier } = require("../middlewares/identificatiion");
+const { Date } = require("joi");
 
 exports.signup = async (req, res) => {
   const { email, password } = req.body;
@@ -133,7 +135,7 @@ exports.sendVerificationCode = async (req, res) => {
     if (info.accepted[0] === existingUser.email) {
       const hashedCodeValue = hmacProcess(
         codeValue,
-        process.env.NODE_CODE_SENDING_EMAIL_SECRET
+        process.env.HMAC_VERIFICATION_CODE_SECRET
       );
       existingUser.verificationCode = hashedCodeValue;
       existingUser.verificationCodeValidation = Date.now();
@@ -164,90 +166,53 @@ exports.verifyVerificationCode = async (req, res) => {
     const existingUser = await User.findOne({ email }).select(
       "+verificationCode +verificationCodeValidation"
     );
+
     if (!existingUser) {
       return res
         .status(404)
-        .json({ success: false, message: "User does not exists!" });
+        .json({ success: false, message: "User not found" });
     }
     if (existingUser.verified) {
       return res
         .status(400)
-        .json({ success: false, message: "User already verified!" });
+        .json({ success: false, message: "User already verified" });
     }
+
     if (
       !existingUser.verificationCode ||
       !existingUser.verificationCodeValidation
     ) {
       return res
         .status(400)
-        .json({ success: false, message: "Verification code not sent!" });
+        .json({
+          success: false,
+          message: "No verification code found. Please request a new one.",
+        });
     }
 
     if (Date.now() - existingUser.verificationCodeValidation > 5 * 60 * 1000) {
       return res
         .status(400)
-        .json({ success: false, message: "Verification code expired!" });
+        .json({ success: false, message: "Verification code expired. Please request a new one." });
     }
+
     const hashedCodeValue = hmacProcess(
       codeValue,
       process.env.HMAC_VERIFICATION_CODE_SECRET
     );
 
-    if (hashedCodeValue === existingUser.verificationCode) {
+    if(hashedCodeValue === existingUser.verificationCode) {
+      
       existingUser.verified = true;
       existingUser.verificationCode = undefined;
       existingUser.verificationCodeValidation = undefined;
       await existingUser.save();
-      return res.status(200).json({
-        success: true,
-        message: "User verified successfully!",
-      });
+
+      return res.status(200).json({ success: true, message: "User verified successfully!" });
     }
-    return res
-      .status(400)
-      .json({ success: false, message: "Unexpected Error!!!" });
+    res.status(400).json({ success: false, message: "Un." });
   } catch (error) {
-    console.log(error);
+    console.error("Error verifying verification code:", error);
+    res.status(500).json({ success: false, message: "Internal Server Error" });
   }
 };
-
-exports.changePassword = async (req, res) => {
-  const { userId, verified } = req.user;
-  const { oldPassword, newPassword } = req.body;
-  try {
-    const { error, value } = changePasswordSchema.validate({
-      oldPassword,
-      newPassword,
-    });
-    if (error) {
-      return res
-        .status(400)
-        .json({ success: false, message: error.details[0].message });
-    }
-    if (!verified) {
-      return res
-        .status(401)
-        .json({ success: false, message: "error." });
-    }
-
-    const existingUser = await User.findOne({_id:userId}).select('+password')
-    if (!existingUser) {
-      return res
-        .status(404)
-        .json({ success: false, message: "User not found!" });
-    }
-    const result = await doHashValidation(oldPassword, existingUser.password);
-    if (!result) {
-      return res
-        .status(404)
-        .json({ success: false, message: "Invalid Credentials" });
-    }
-
-    const hashedPassword = await doHash(newPassword, 12);
-    existingUser.password = hashedPassword
-    await existingUser.save();
-    return res.status(200).json({succcess : true, message: "Password changed successfully!"});
-  } catch (error) {
-    console.log(error);
-  }
-}

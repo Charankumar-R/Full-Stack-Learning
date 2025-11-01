@@ -149,3 +149,10 @@ File Manipulation Commands
 
 ```
 
+- Disk Usage Commands
+```
+- df -h : display disk space usage in human-readable format 
+- du -sh /path/to/directory : display the total size of a directory in human-readable format
+```
+
+-

@@ -14,9 +14,8 @@ router.patch(
 );
 router.patch(
   "/verify-verification-code",
-  identifier,
   authController.verifyVerificationCode
 );
-router.patch("/change-password", identifier, authController.changePassword);
+//router.patch("/change-password", identifier, authController.changePassword);
 
 module.exports = router;
