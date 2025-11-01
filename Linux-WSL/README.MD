@@ -85,3 +85,67 @@ computing, DevOps, and supercomputers.
 - Linux Command Line Tutorial: https://linuxcommand.org/
 - WSL GitHub Repository: https://github.com/microsoft/WSL
 ```
+
+## Commands 
+
+Display System Information Commands
+```
+- pwd : print working directory
+- uname -a : display system information
+- whoami : display current user
+![alt text](image.png)
+```
+
+List Files Commands
+```
+-ls : list files in long format
+-ls -l : list files in long format with detailed information
+-ls -a : list all files including hidden files
+-ls -la : list all files in long format with detailed information
+-ls -lh : list files in long format with human-readable file sizes
+-ls -ltr : list files in long format sorted by modification time in reverse order
+-ls -lstr : list files in long format sorted by size in reverse order
+-ls -R : list files recursively in all subdirectories
+-ls -d */ : list only directories
+-ls -S : list files sorted by size 
+
+![alt text](image-1.png)
+```
+Bashrc File Commands
+```
+- nano ~/.bashrc : open the .bashrc file in the nano text editor
+- source ~/.bashrc : apply changes made to the .bashrc file
+- echo 'export PATH=$PATH:/new/path' >> ~/.bashrc : add a new path to the PATH variable in .bashrc
+- alias ll='ls -la' >> ~/.bashrc : create an alias for the 'ls -la' command in .bashrc
+eg:
+    -charan@RCK:~$ alias cdl="cd /home/charan/link/test/demo"
+    -charan@RCK:~$ cdl
+    -charan@RCK:~/link/test/demo$
+- export VARIABLE_NAME=value >> ~/.bashrc : set an environment variable in .bashrc
+- cat ~/.bashrc : display the contents of the .bashrc file
+```
+
+File Manipulation Commands
+```
+- cp source.txt destination.txt : copy a file
+- mv oldname.txt newname.txt : rename or move a file
+- rm file.txt : delete a file
+- mkdir new_directory : create a new directory
+- rmdir empty_directory : remove an empty directory
+- touch newfile.txt : create a new empty file
+- ln -s /path/to/original /path/to/symlink : create a symbolic link
+```
+
+-nohup Command
+```
+- nohup command & : run a command in the background, ignoring hangup signals
+- Example:
+    - nohup python3 myscript.py &
+    - This will run 'myscript.py' in the background even if the terminal is closed.
+- The output will be saved to 'nohup.out' by default.
+- To specify a different output file, use:
+    - nohup command > output.log 2>&1 &
+    - This will redirect both stdout and stderr to 'output.log'.
+
+```
+
