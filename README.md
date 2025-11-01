@@ -8,7 +8,7 @@ This repository documents my complete journey through **Full Stack Web Developme
 
 | Folder | Description |
 |--------|--------------|
-| **HTML-CSS-Learning/** | Learn the fundamentals of HTML & CSS: structure, styling, layout, and responsive web design. Includes beginner-friendly projects and code snippets. |
+| **HTML-CSS/** | Learn the fundamentals of HTML & CSS: structure, styling, layout, and responsive web design. Includes beginner-friendly projects and code snippets. |
 | **JS-Learning/** | Explore JavaScript essentials including variables, functions, ES6 concepts, DOM manipulation, asynchronous operations, and APIs. Each subfolder demonstrates a focused topic or challenge. |
 | **Git-and-Github/** | Practice version control using Git. Learn branching, commits, pull requests, conflict resolution, and repository management through practical exercises. |
 | **Linux-WSL/** | A guide to working in the Linux environment using Windows Subsystem for Linux (WSL). Covers essential terminal commands, file navigation, and environment setup. |
